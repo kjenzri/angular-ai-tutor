@@ -1,0 +1,21 @@
+<main>
+  <h1>{{ title() }}</h1>
+  <section>
+    <h2>{{ recipe().name }}</h2>
+    <h3>{{ recipe().description }}</h3>
+    <p>Ingredients:</p>
+    <ul>
+      @for(ingredient of recipe().ingredients; track $index) {
+      <li>{{ ingredient.name }} - {{ ingredient.quantity }} {{ ingredient.unit }}</li>
+      }
+    </ul>
+    <label>Serving: {{ serving() }}</label>
+    <button (click)="increase()">+</button>
+    <button (click)="decrease()">-</button>
+  </section>
+  <section>
+    <button (click)="button1()" >Button 1</button>
+    <button (click)="button2()" >Button 2</button>
+  </section>
+</main>
+
