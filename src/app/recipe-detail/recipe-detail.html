@@ -2,6 +2,9 @@
 <section class="recipe-description">
 	<img [src]="recipe()?.imgUrl" [attr.alt]="recipe()?.name" />
 	<h2>{{ recipe()?.name }}</h2>
+    @if(recipe()?.isFavorite) {
+        <p>★ Favorite Recipe</p>
+    }
 	<h3>{{ recipe()?.description }}</h3>
 </section>
 <p>Ingredients:</p>
