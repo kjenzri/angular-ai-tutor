@@ -1,11 +1,13 @@
-<img [src]="recipe()?.imgUrl" [attr.alt]="recipe()?.name" />
-<h2>{{ recipe()?.name }}</h2>
-<h3>{{ recipe()?.description }}</h3>
 
+<section class="recipe-description">
+	<img [src]="recipe()?.imgUrl" [attr.alt]="recipe()?.name" />
+	<h2>{{ recipe()?.name }}</h2>
+	<h3>{{ recipe()?.description }}</h3>
+</section>
 <p>Ingredients:</p>
 <ul>
-	@for(ing of adjustedIngredients(); track $index) {
-		<li>{{ ing.name }} — {{ ing.quantity }} {{ ing.unit }}</li>
+	@for(ingredient of adjustedIngredients(); track $index) {
+		<li>{{ ingredient.name }} — {{ ingredient.quantity }} {{ ingredient.unit }}</li>
 	}
 </ul>
 
