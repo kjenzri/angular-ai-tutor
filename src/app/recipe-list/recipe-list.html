@@ -1,0 +1,23 @@
+<main class="recipe">
+  <img [src]="recipe().imgUrl" [attr.alt]="recipe().name" />
+  <h2>{{ recipe().name }}</h2>
+  <h3>{{ recipe().description }}</h3>
+
+  <p>Ingredients:</p>
+  <ul>
+    @for(ing of adjustedIngredients(); track $index) {
+      <li>{{ ing.name }} — {{ ing.quantity }} {{ ing.unit }}</li>
+    }
+  </ul>
+
+  <div class="servings">
+    <label>Servings: {{ serving() }}</label>
+    <button (click)="increase()">+</button>
+    <button (click)="decrease()">-</button>
+  </div>
+
+  <div class="switch">
+    <button (click)="selectFirst()">Show Spaghetti</button>
+    <button (click)="selectSecond()">Show Caprese</button>
+  </div>
+</main>
