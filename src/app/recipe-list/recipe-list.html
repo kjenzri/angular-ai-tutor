@@ -1,8 +1,11 @@
 <main class="recipe">
   <app-recipe-detail [recipe]="activeRecipe()"></app-recipe-detail>
-
+  <section>
+    <input type="text" [(ngModel)]="searchTerm" />
+  </section >
   <div class="switch">
-    <button (click)="selectFirst()">Show Spaghetti</button>
-    <button (click)="selectSecond()">Show Caprese</button>
+    @for(recipe of filteredReceipes(); track $index){
+      <button (click)="select($index)">{{recipe.name}}</button>
+    }
   </div>
 </main>
