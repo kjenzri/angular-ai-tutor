@@ -1,0 +1,5 @@
+<form [formGroup]="recipeForm">
+    <label for="name">Recipe Name:</label>
+    <input id="name" type="text" formControlName="name" />
+    <button type="button" (click)="add()">Add Recipe</button>
+</form>

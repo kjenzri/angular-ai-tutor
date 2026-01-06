@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { RecipeModel } from '../models';
 import { Recipe } from '../recipe';
 import { RouterLink } from "@angular/router";
+import { RecipeForm } from "../recipe-form/recipe-form";
 
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.css',
-  imports: [FormsModule, RouterLink]
+  imports: [FormsModule, RouterLink, RecipeForm]
 })
 export class RecipeList {
   private readonly recipeService = inject(Recipe); 
