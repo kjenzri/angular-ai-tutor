@@ -1,10 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Recipe } from '../recipe';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-recipe-form',
-  imports: [ ReactiveFormsModule ],
+  imports: [ ReactiveFormsModule,
+    MatButtonModule
+   ],
   templateUrl: './recipe-form.html',
   styleUrl: './recipe-form.css',
 })
